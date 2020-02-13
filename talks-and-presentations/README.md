@@ -13,8 +13,6 @@ A Zotero group with the items listed below can be found [here](https://www.zoter
 * *Ganis, Gerardo*. **“The Turnkey Software Stack: Where Are We and Where We Want to Go.”** presented at the IAS HEP 2020, January 17, 2020. <http://ias.ust.hk/program/shared_doc/2020/202001hep/workshop/exp/20200117_1038_am_Gerri_GANIS.pdf>.
 
 
-## Publications
-
 ...
 
 ## Upcoming Talks and Workshops
@@ -22,5 +20,7 @@ A Zotero group with the items listed below can be found [here](https://www.zoter
 * [CLIC-Workshop](https://indico.cern.ch/event/850899/) March 2020 (Valentin) 
 
 * [ACAT](https://indico.cern.ch/event/855454/) 2020 (Valentin)
+
+...
 
 
