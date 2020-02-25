@@ -8,6 +8,7 @@
     :caption: Contents:
 
     talks-and-presentations/README.md
+    call-for-logos/README.md
     CONTRIBUTING.md
 
 .. toctree::
