@@ -7,3 +7,8 @@ Logo 1
 Logo 2
 
 ![](key4hep_logo2.svg)
+
+Logo 3
+
+![](key4hep_logo3.png)
+
