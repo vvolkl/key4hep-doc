@@ -7,6 +7,7 @@
     :includehidden:
     :caption: Contents:
 
+    setup-and-getting-started/README.md
     talks-and-presentations/README.md
     CONTRIBUTING.md
 
