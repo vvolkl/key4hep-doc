@@ -14,8 +14,6 @@ source /cvmfs/sw-nightlies.hsf.org/key4hep/setup.sh
 ```
 
 
-### Using Spack to compile the full stack 
-
 
 ### Using Virtual Machines or Docker containers
 
