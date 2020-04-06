@@ -7,6 +7,8 @@
     :includehidden:
     :caption: Contents:
 
+    setup-and-getting-started/README.md
+    setup-and-getting-started/spack-howto.md
     talks-and-presentations/README.md
     call-for-logos/README.md
     CONTRIBUTING.md
