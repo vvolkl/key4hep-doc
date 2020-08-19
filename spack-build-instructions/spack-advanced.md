@@ -2,7 +2,7 @@
 # Spack Usage and Further Technical Topics
 
 This page collects a few known workarounds for issues and areas of development in spack.
-Check also the issues in [k4-spack](https://github.com/key4hep/k4-spack/issues) for up to date information.
+Check also the issues in [k4-spack](https://github.com/key4hep/k4-spack/issues) for up-to-date information.
 
 ## Concretizing before Installation
 
@@ -34,7 +34,7 @@ Concretized
 
 
 ```
-In this example, you could check for an existing ocaml installation and use it via its hash:
+In this example, you could check for an existing `ocaml` installation and use it via its hash:
 
 ```bash
 
@@ -72,7 +72,7 @@ This 'concretizer' is one of the areas of development in spack, so the commands 
 ## System Dependencies
 
 Although spack can use externally installed packages (and even automatically find them), this is strongly discouraged.
-This is because the dependency resolution will not work as intended.
+This is because the dependency resolution may not work as intended, and changes to the external packages can break the installation
 
 
 ## Target Architectures
@@ -93,7 +93,7 @@ in `$HOME/.spack/linux/packages.yaml`
 ## Bundle Packages and Environments
 
 Right now, key4hep is installed via a `BundlePackage`, that depends on all other relevant packages.
-An alternative would be to use [spack environments](https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html#creating-and-activating-environments\)
+An alternative would be to use [spack environments](https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html#creating-and-activating-environments\). This alternative is still under investigation.
 
 
 ## Setting Up Runtime Environments 
@@ -105,7 +105,7 @@ The setup scripts on cvmfs are created by manually editing `spack load --sh gcc 
 
 ## Compiler Dependencies and Data Packages
 
-Some HEP packages are not really specific to any platform/compiler because they consist only of data files.
+Some HEP packages (like `geant4-data`) consist only of data files, and can thus be used on any platform.
 Spack cannot yet handle this gracefully, but an ongoing development tries to treat compilers as dependencies, which would help with re-using data packages.
 
 
@@ -130,7 +130,7 @@ rsync -axv --inplace --delete    --verbose -e "ssh -T  -o Compression=no -o Stri
 
 Spack uses compiler wrappers instead of exposing the actual compilers during the build.
 For packages like whizard, which register the compiler path to use during runtime, this will not work, as the wrappers are not available at runtime.
-For these packages, the current workaround is to force spack to use the actual compilers during build (see whizard recipe)
+For these packages, the current workaround is to force spack to use the actual compilers during build (see the build recipe of `whizard`).
 
 
 ## Nightly Builds and Using Git Commits as Versions
