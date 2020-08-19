@@ -4,6 +4,10 @@
 This page collects a few known workarounds for issues and areas of development in spack.
 Check also the issues in [k4-spack](https://github.com/key4hep/k4-spack/issues) for up-to-date information.
 
+
+
+
+
 ## Concretizing before Installation
 
 Spack often needs to be forced to use existing packages as dependencies when installing a new package.
@@ -67,6 +71,58 @@ spack spec -I whizard ^/ycqhz3l
 ```
 
 This 'concretizer' is one of the areas of development in spack, so the commands might frequently change or the behaviour differ from what is described here.
+
+
+
+### Working around spack concretizer problems
+
+Currently the default settings for some of the packages here do not work due to
+known [short comings of the spack
+concretizer](https://spack.readthedocs.io/en/latest/known_issues.html#variants-are-not-properly-forwarded-to-dependencies).
+For example `spack install K4FWCore` will most probably fail with the following error
+
+```
+1. "cxxstd=11" conflicts with "root+root7" [root7 requires at least C++14]
+```
+
+Instead of fixing all the packages to deal with these issues, one of the
+following workarounds can be used. The issues in spack are planned to be fixed
+with the next spack release which would hopefully make these obsolete.
+
+#### Requiring a specific package version
+
+The simplest solution to the above problem is to simply require a `root` version
+with the appropriate requirements, e.g.
+
+```bash
+spack install K4FWCore ^root cxxstd=17
+```
+
+will tell spack to use `cxxstd=17` also for building `root` and get rid of the
+conflict above. If using this, make sure to use the same value for `cxxstd` for
+`K4FWCore` and `root`.
+
+#### Requiring certain variants globally
+
+spack can be configured using some [configuration
+files](https://spack.readthedocs.io/en/latest/configuration.html). Specifically
+using `packages.yaml` which is read from the user directory, i.e. `~/.spack` (or
+`/.spack/linux`) can be used to enforce the value of certain default variants
+globally. To solve the above problem it is enough to put the following into
+`packages.yaml`:
+
+```yaml
+packages:
+  all:
+  variants: cxxstd=17
+  ```
+
+It is still possible to override this for certain packages either by
+individually configuring them in `packages.yaml` or via the command line which
+take precedence over all configuration files.
+
+
+
 
 
 ## System Dependencies
@@ -143,3 +199,6 @@ Nightly builds can still be done with spack
 ## Spack-Installed LCG releases
 
 A spack  install of the whole lcg release is work in progress, see https://gitlab.cern.ch/sft/sft-spack-repo.
+
+
+
