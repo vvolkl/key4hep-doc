@@ -17,8 +17,8 @@ Spack can be installed by simply cloning it with git. The spack repository for k
 git clone https://github.com/spack/spack.git
 source spack/share/spack/setup-env.sh
 git clone https://github.com/key4hep/k4-spack.git
-
 spack repo add k4-spack
+cp k4-spack/config/packages.yaml spack/etc/spack
 
 ```
 
