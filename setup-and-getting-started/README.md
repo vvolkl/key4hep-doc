@@ -10,7 +10,7 @@ The following command will set up the pre-installed software on lxplus (or any c
 
 ```bash
 
-source /cvmfs/sw-nightlies.hsf.org/key4hep/setup.sh
+source /cvmfs/sw.hsf.org/key4hep/setup.sh
 ```
 
 
