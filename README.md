@@ -10,6 +10,7 @@
     setup-and-getting-started/README.md
     spack-build-instructions/README.md
     spack-build-instructions/spack-advanced.md
+    examples/clic.md
     talks-and-presentations/README.md
     call-for-logos/README.md
     CONTRIBUTING.md
