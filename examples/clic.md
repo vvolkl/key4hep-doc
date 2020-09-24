@@ -43,9 +43,16 @@ We can convert the ``xml`` steering file to a Gaudi steering file
 ```bash
 convertMarlinSteeringToGaudi.py clicReconstruction.xml  > clicReconstruction.py
 ```
+
 Now we need to modify the ``clicReconstruction.py`` file to point to the ``ttbar.slcio`` input file, and change the
-``DD4hepXMLFile`` parameter for the ``InitDD4hep`` algorithm, and enable a few of the optional processors in the
-``algList`` at the end of the file.
+``DD4hepXMLFile`` parameter for the ``InitDD4hep`` algorithm.  In addition the two processors with the comment ``#
+Config.OverlayFalse`` and ``# Config.TrackingConformal`` should be enabled by uncommenting their line in the ``algList``
+at the end of the file.
+
+```
+sed ...
+
+```
 
 Then the reconstruction using the wrapper can be run with
 
