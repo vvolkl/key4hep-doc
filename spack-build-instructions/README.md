@@ -6,7 +6,7 @@ This is part of a software R&D program, so some parts are still somewhat experim
 A central installation is provided on cvmfs, and can be used without spack by sourcing:
 
 ```bash
-source /cvmfs/sw.hsf.org/key4hep/views/key4hep-stack-0.1/linux-centos7-broadwell/gcc-8.3.0/setup.sh
+source /cvmfs/sw.hsf.org/key4hep/setup.sh
 ```
 
 Using spack can give a more fine-grained control over loaded packages.
