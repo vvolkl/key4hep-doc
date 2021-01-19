@@ -193,5 +193,9 @@ For these packages, the current workaround is to force spack to use the actual c
 
 A spack installation that contains all packages in the LCG releases is work in progress, see https://gitlab.cern.ch/sft/sft-spack-repo.
 
+## Using Spack-installed GCC
+
+When installing gcc with spack, it is necessary to add a `cc` symlink to `$PATH`, in order to avoid errors with cling, see https://github.com/spack/spack/issues/17488.
+
 
 
