@@ -42,7 +42,7 @@ spack load key4hep-stack
 
 ### Configuring Spack
 
-Alternatively, and for other platforms, spack can be configured in a few steps.
+Alternatively, and for other platforms, spack can be configured in a few steps. These steps are essentially what is used to create the pre-configured spack instance in this script: https://github.com/key4hep/key4hep-spack/blob/master/scripts/ci_setup_spack.sh
 
 #### Installing Spack
 Spack itself is very easy to install -  simply clone the repository with git.
@@ -81,10 +81,20 @@ upstreams:
   spack-instance-1:
       install_tree: /cvmfs/sw.hsf.org/spackages/
 EOT
-
 ```
 
-Alternatively, the full stack can be installed locally by simply doing:
+
+#### Setting up an upstream compiler
+
+Often it is practical to use a compiler already installed upstream. Spack provides the `spack compiler find` command for this, but the compiler needs to be loaded into the PATH:
+
+```bash
+# loading the compiler from upstream
+spack load gcc
+spack compiler find --scope site
+```
+
+Now, the full stack can be installed locally by simply doing:
 
 ```bash
 # install the meta-package for the key4hep-stack
