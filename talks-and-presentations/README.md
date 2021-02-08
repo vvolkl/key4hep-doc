@@ -3,6 +3,8 @@
 
 A Zotero group with the items listed below can be found [here](https://www.zotero.org/groups/2447672/key4hep-talksandpublications).
 
+* *Volkl, Valentin*, **Status of the key4hep Software Development** presented at IAS Program on High Energy Physics (HEP 2021), January 20, 2021, <https://indico.cern.ch/event/971970/timetable/#153-3-status-of-the-key4hep-so>
+
 * *Madlener, Thomas*. **Key4HEP - Turnkey Software for Future Colliders** presented at the XXVII Cracow EPIPHANY Conference on Future of particle physics, January 10, 2021. <https://indico.cern.ch/event/934666/contributions/4154229/attachments/2168411/3660367/key4hep_epiphany2021_cracow.pdf>
 
 * *Ganis, Gerardo*. **“The Turnkey Software Stack: Where Are We and Where We Want to Go.”** presented at the IAS HEP 2020, January 17, 2020. <http://ias.ust.hk/program/shared_doc/2020/202001hep/workshop/exp/20200117_1038_am_Gerri_GANIS.pdf>.
