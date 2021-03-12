@@ -4,7 +4,7 @@
 This assumes that you have access to an installation of the Key4hep-stack, either via ``CVMFS`` or ``spack install``.
 To setup the installation on cvmfs, do:
 
-```bash
+```
 source /cvmfs/sw.hsf.org/key4hep/setup.sh
 ```
 
@@ -14,13 +14,15 @@ reconstruction both with ``Marlin`` and ``k4run``. These steps can be adapted to
 processors as well.
 
 The ``CLICPerformance`` repository contains the steering and input files.
+
 ```bash
 git clone https://github.com/iLCSoft/CLICPerformance
 ```
 
 ## Simulation
 
-Now we can already simulate a few events
+Now we can already simulate a few events:
+
 ```bash
 cd CLICPerformance/clicConfig
 
@@ -35,7 +37,8 @@ ddsim --compactFile $LCGEO/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml \
 
 ### Reconstruction with Marlin
 
-To run the reconstruction with ``Marlin``
+To run the reconstruction with ``Marlin``:
+
 ```bash
 cd CLICPerformance/clicConfig
 
@@ -48,6 +51,7 @@ Marlin clicReconstruction.xml \
 ### Reconstruction with with Gaudi
 
 We can convert the ``xml`` steering file to a Gaudi steering file
+
 ```bash
 cd CLICPerformance/clicConfig
 
@@ -75,7 +79,7 @@ sed -i 's;"DD4hepXMLFile", ".*",; "DD4hepXMLFile", os.environ["LCGEO"]+"/CLIC/co
 
 Then the reconstruction using the wrapper can be run with
 
-```
+```bash
 cd CLICPerformance/clicConfig
 
 k4run clicReconstruction.py
