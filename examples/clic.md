@@ -16,13 +16,14 @@ processors as well.
 The ``CLICPerformance`` repository contains the steering and input files.
 ```bash
 git clone https://github.com/iLCSoft/CLICPerformance
-cd CLICPerformance/clicConfig
 ```
 
 ## Simulation
 
 Now we can already simulate a few events
 ```bash
+cd CLICPerformance/clicConfig
+
 ddsim --compactFile $LCGEO/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml \
       --outputFile ttbar.slcio \
       --steeringFile clic_steer.py \
@@ -36,6 +37,8 @@ ddsim --compactFile $LCGEO/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml \
 
 To run the reconstruction with ``Marlin``
 ```bash
+cd CLICPerformance/clicConfig
+
 Marlin clicReconstruction.xml \
        --InitDD4hep.DD4hepXMLFile=$LCGEO/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml \
        --global.LCIOInputFiles=ttbar.slcio \
@@ -46,6 +49,8 @@ Marlin clicReconstruction.xml \
 
 We can convert the ``xml`` steering file to a Gaudi steering file
 ```bash
+cd CLICPerformance/clicConfig
+
 convertMarlinSteeringToGaudi.py clicReconstruction.xml clicReconstruction.py
 ```
 
@@ -55,6 +60,8 @@ Config.OverlayFalse`` and ``# Config.TrackingConformal`` should be enabled by un
 at the end of the file.
 
 ```bash
+cd CLICPerformance/clicConfig
+
 sed -i 's;read.Files = \[".*"\];read.Files = \["ttbar.slcio"\];' clicReconstruction.py
 sed -i 's;EvtMax   = 10,;EvtMax   = 3,;' clicReconstruction.py
 sed -i 's;"MaxRecordNumber", "10", END_TAG,;"MaxRecordNumber", "3", END_TAG,;' clicReconstruction.py
@@ -69,5 +76,7 @@ sed -i 's;"DD4hepXMLFile", ".*",; "DD4hepXMLFile", os.environ["LCGEO"]+"/CLIC/co
 Then the reconstruction using the wrapper can be run with
 
 ```
+cd CLICPerformance/clicConfig
+
 k4run clicReconstruction.py
 ```
