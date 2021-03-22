@@ -8,7 +8,7 @@ A Zotero group with the items listed below can be found [here](https://www.zoter
 
 * *Madlener, Thomas*. **Key4HEP - Turnkey Software for Future Colliders** presented at the XXVII Cracow EPIPHANY Conference on Future of particle physics, January 10, 2021. <https://indico.cern.ch/event/934666/contributions/4154229/attachments/2168411/3660367/key4hep_epiphany2021_cracow.pdf>
 
-* *Helsens, Clement*, ** FCC software for physics and detector studies** presented at the XXVII Cracow EPIPHANY Conference on Future of particle physics, January 10, 2021. <https://indico.cern.ch/event/934666/contributions/4154228/>
+* *Helsens, Clement*, **FCC software for physics and detector studies** presented at the XXVII Cracow EPIPHANY Conference on Future of particle physics, January 10, 2021. <https://indico.cern.ch/event/934666/contributions/4154228/>
 
 * *Ganis, Gerardo*. **“The Turnkey Software Stack: Where Are We and Where We Want to Go.”** presented at the IAS HEP 2020, January 17, 2020. <http://ias.ust.hk/program/shared_doc/2020/202001hep/workshop/exp/20200117_1038_am_Gerri_GANIS.pdf>.
 
