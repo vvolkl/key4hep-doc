@@ -11,7 +11,7 @@ equivalent of scram.
 
 ### Set up the environment
 
-The first step is adding the 
+The first step is adding all dependencies to the bash environment. 
 In case you are unsure, it is best to use the default init script, provided on CVMFS for Centos7:
 
 ```
@@ -44,8 +44,9 @@ In order to run the code you just installed, there are a few environment variabl
   in order to make libraries available for linking and as for the plugin systems in Gaudi/DD4hep
 * export ROOT_INCLUDE_PATH=$PWD/include:$ROOT_INCLUDE_PATH
   in case the package builds ROOT dictionaries
-* `export <PACKAGENAME>=$PWD/share/<PACKAGENAME>`
-  some packages distribute data files that are found with a special environment variable, usually this is the package name in all caps 
+* `export <PACKAGENAME>=$PWD/share/<PackageName>`
+    - e.g. `export K4SIMDELPHES=$PWD/share/k4SimDelphes/`
+  some packages distribute data files that are found with a special environment variable, usually this is the package name in all caps.
 
 ## CMake example packages
 
