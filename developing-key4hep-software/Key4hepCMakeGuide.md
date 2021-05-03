@@ -36,15 +36,21 @@ Developers may also look into `spack` to have more fine-grained control over the
 
 In order to run the code you just installed, there are a few environment variables to set up (assuming the installation directory is the working directory):
 
-* `export CMAKE_PREFIX_PATH=$PWD/:$CMAKE_PREFIX_PATH`
+* For packages that will be used in the CMake configuration of another package: 
+  - `export CMAKE_PREFIX_PATH=$PWD/:$CMAKE_PREFIX_PATH`
   in order to use this installation as a dependency for other packages
-* `export PATH=$PWD/bin/:$PATH`
+* For packages that build executables:
+  - `export PATH=$PWD/bin/:$PATH`
   in order to make any executables available on the command line
-* `export LD_LIBRARY_PATH=$PWD/lib:$PWD/lib64:$LD_LIBRARY_PATH`
+* For packages that build shared libraries:
+  - `export LD_LIBRARY_PATH=$PWD/lib:$PWD/lib64:$LD_LIBRARY_PATH`
   in order to make libraries available for linking and as for the plugin systems in Gaudi/DD4hep
-* export ROOT_INCLUDE_PATH=$PWD/include:$ROOT_INCLUDE_PATH
-  in case the package builds ROOT dictionaries
-* `export <PACKAGENAME>=$PWD/share/<PackageName>`
+* For packages that distribute python files :
+  - `export PYTHONPATH=$PWD/python:$PYTHONPATH`
+* For packages that build ROOT dictionaries:
+    - `export ROOT_INCLUDE_PATH=$PWD/include:$ROOT_INCLUDE_PATH`
+* For packages that distribute data files in share:
+  - `export <PACKAGENAME>=$PWD/share/<PackageName>`
     - e.g. `export K4SIMDELPHES=$PWD/share/k4SimDelphes/`
   some packages distribute data files that are found with a special environment variable, usually this is the package name in all caps.
 
