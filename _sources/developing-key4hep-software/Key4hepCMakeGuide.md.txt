@@ -34,7 +34,7 @@ Developers may also look into `spack` to have more fine-grained control over the
 
 ### Using your local installation
 
-In order to run the code you just installed, there are a few environment variables to set up (assuming the installation directory is the working directory):
+In order to run the code you just installed, there are a few environment variables to set up (assuming the installation directory is the working directory). The following list is fairly exhaustive, whether a package needs all of these variables depends on the features it provides:
 
 * For packages that will be used in the CMake configuration of another package: 
   - `export CMAKE_PREFIX_PATH=$PWD/:$CMAKE_PREFIX_PATH`
@@ -53,6 +53,18 @@ In order to run the code you just installed, there are a few environment variabl
   - `export <PACKAGENAME>=$PWD/share/<PackageName>`
     - e.g. `export K4SIMDELPHES=$PWD/share/k4SimDelphes/`
   some packages distribute data files that are found with a special environment variable, usually this is the package name in all caps.
+
+Note that
+
+#### Setting a package up from the build directory
+
+CMake packages build all binaries in the build directory, from which they are installed.
+When developing and testing a package, it is practical to not install to the installation directory upon every change.
+So for most packages it is also possible to set up the environment to pick up binaries from the build folders.
+The same variables as above are needed, but need to be adapted for the directory structure in the build folder.
+Gaudi based packages provide a `<packagename>env.sh` in the build folder that should set up all paths to use the local binaries.
+
+
 
 ## CMake example packages
 

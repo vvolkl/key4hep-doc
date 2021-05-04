@@ -352,7 +352,7 @@ Developers may also look into <code class="docutils literal notranslate"><span c
 </div>
 <div class="section" id="using-your-local-installation">
 <h3>Using your local installation<a class="headerlink" href="#using-your-local-installation" title="Permalink to this headline">¶</a></h3>
-<p>In order to run the code you just installed, there are a few environment variables to set up (assuming the installation directory is the working directory):</p>
+<p>In order to run the code you just installed, there are a few environment variables to set up (assuming the installation directory is the working directory). The following list is fairly exhaustive, whether a package needs all of these variables depends on the features it provides:</p>
 <ul class="simple">
 <li><p>For packages that will be used in the CMake configuration of another package:</p>
 <ul>
@@ -393,6 +393,15 @@ some packages distribute data files that are found with a special environment va
 </ul>
 </li>
 </ul>
+<p>Note that</p>
+<div class="section" id="setting-a-package-up-from-the-build-directory">
+<h4>Setting a package up from the build directory<a class="headerlink" href="#setting-a-package-up-from-the-build-directory" title="Permalink to this headline">¶</a></h4>
+<p>CMake packages build all binaries in the build directory, from which they are installed.
+When developing and testing a package, it is practical to not install to the installation directory upon every change.
+So for most packages it is also possible to set up the environment to pick up binaries from the build folders.
+The same variables as above are needed, but need to be adapted for the directory structure in the build folder.
+Gaudi based packages provide a <code class="docutils literal notranslate"><span class="pre">&lt;packagename&gt;env.sh</span></code> in the build folder that should set up all paths to use the local binaries.</p>
+</div>
 </div>
 </div>
 <div class="section" id="cmake-example-packages">
